@@ -375,6 +375,12 @@ export default function App() {
               <motion.p variants={itemVariants} className="text-justify">
                 Her research bridges the domains of crowdsourcing, matching algorithms, and tiny‑machine learning. By integrating bidirectional preferences, workforce balance considerations, and on‑device intelligence, her work advances both the theoretical foundations and practical applications of intelligent task assignment systems and human‑computer interaction.
               </motion.p>
+              <motion.p
+                variants={itemVariants}
+                className="text-justify font-medium italic text-[#A51C30] bg-[#A51C30]/5 p-4 rounded-xl border border-[#A51C30]/20"
+              >
+                "I am currently interested in working with enthusiastic Ph.D. students and research interns who wish to explore cutting-edge research at the convergence of Human–Computer Interaction (HCI), matching theory, Edge AI, and machine learning, with a shared goal of designing intelligent systems that advance sustainability and societal well-being."
+              </motion.p>
             </motion.div>
           </motion.div>
         </div>
