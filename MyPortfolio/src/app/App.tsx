@@ -12,7 +12,7 @@ export default function App() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'about', 'research', 'publications', 'teaching', 'awards', 'contact'];
+      const sections = ['home', 'about', 'research', 'publications', 'teaching', 'awards', 'demos', 'contact'];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
@@ -51,6 +51,7 @@ export default function App() {
     { id: 'publications', label: 'Publications' },
     { id: 'teaching', label: 'Teaching' },
     { id: 'awards', label: 'Awards' },
+    { id: 'demos', label: 'Work Demos' },
     { id: 'contact', label: 'Contact' }
   ];
 
@@ -91,6 +92,25 @@ export default function App() {
     "DST INSPIRE Fellowship for Doctoral Research",
     "Ranked 2nd in BTech,CSE, University of Calcutta",
     "Ranked 1st in MTech,CSE, University of Calcutta"
+  ];
+
+  const demos = [
+    {
+      id: "pehJozECCdI",
+      title: "Project Demo 1",
+    },
+    {
+      id: "jC7whbhFThc",
+      title: "Project Demo 2",
+    },
+    {
+      id: "CNJ4wyo7Dyo",
+      title: "Project Demo 3",
+    },
+    {
+      id: "_57USD7uBtk",
+      title: "Project Demo 4",
+    }
   ];
 
   const containerVariants = {
@@ -641,6 +661,51 @@ export default function App() {
                   <Award className="text-[#A51C30]" size={24} />
                 </motion.div>
                 <p className="text-lg text-gray-700 leading-relaxed">{award}</p>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Demos Section */}
+      <section id="demos" className="py-24 bg-gradient-to-br from-gray-50 to-gray-100 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-[#A51C30]/5 to-transparent rounded-full blur-3xl" />
+
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="text-5xl mb-16 text-gray-900 text-center" style={{ color: '#A51C30' }}>
+              Work Demos
+            </h2>
+          </motion.div>
+
+          <motion.div
+            className="grid md:grid-cols-2 gap-8"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            {demos.map((demo, index) => (
+              <motion.div
+                key={index}
+                variants={itemVariants}
+                whileHover={{ y: -10, boxShadow: "0 20px 40px rgba(165, 28, 48, 0.2)" }}
+                className="bg-white rounded-2xl p-4 shadow-lg hover:shadow-2xl transition-all border border-gray-100 overflow-hidden"
+              >
+                <div className="relative w-full aspect-video rounded-xl overflow-hidden">
+                  <iframe
+                    className="absolute top-0 left-0 w-full h-full"
+                    src={`https://www.youtube.com/embed/${demo.id}`}
+                    title="YouTube video player"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                </div>
               </motion.div>
             ))}
           </motion.div>
