@@ -300,7 +300,7 @@ export default function App() {
               Techno India University, Salt Lake, Sector V, EM Block, Plot No - 4/1, Kolkata, West Bengal 700091
             </p>
             <motion.a
-              href="MyPortfolio/public/cv.pdf"
+              href={`${import.meta.env.BASE_URL}cv.pdf`}
               download="cv.pdf"
               whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(0,0,0,0.3)" }}
               whileTap={{ scale: 0.95 }}
