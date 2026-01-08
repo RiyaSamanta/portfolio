@@ -300,8 +300,8 @@ export default function App() {
               Techno India University, Salt Lake, Sector V, EM Block, Plot No - 4/1, Kolkata, West Bengal 700091
             </p>
             <motion.a
-              href="/cv.pdf"
-              download="Dr_Riya_Samanta_CV.pdf"
+              href="MyPortfolio/public/cv.pdf"
+              download="cv.pdf"
               whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(0,0,0,0.3)" }}
               whileTap={{ scale: 0.95 }}
               className="inline-flex items-center gap-2 bg-white text-[#A51C30] px-8 py-4 text-lg rounded-full transition-all shadow-2xl"
